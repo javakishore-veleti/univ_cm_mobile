@@ -6,65 +6,60 @@ Cross-platform mobile app for university course management, student applications
 
 ### Execution Sequence
 
+#### You only need to run this once after cloning the repo or resetting dependencies.
 ```shell
 
-# 1️⃣ Set up project structure
+# 1.1 Setup the Mobile Project Structure
+# This script creates the required directory structure for the project.
+
 ./setup-mobile-structure.sh
 
-# 2️⃣ Fix Node & npm issues (Optional, only if needed)
+# 1.2 (Optional) Fix Node & npm Issues
+# If you face issues with npm install or node_modules, run:
+
 ./setup-optional-fix-node-npm.sh
 
-# 3️⃣ Fix Ruby & CocoaPods issues (Only for macOS with Xcode)
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    ./setup-optional-fix-ruby-pods.sh
-    ./setup-optional-xcode-ios.sh
-fi
+# 1.3 (Optional) Fix Ruby & CocoaPods Issues (For macOS Users)
+# If working on iOS (MacBook) and encountering CocoaPods issues, run:
 
-# 4️⃣ Set up React Native (Installs dependencies)
-./setup-react-native.sh
-
-# 5️⃣ Run the app on Android (Works for all developers)
-npx react-native run-android
-
-# 6️⃣ Run the app on iOS (Only for Mac users with Xcode)
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    npx react-native run-ios
-fi
-
-
-chmod +x setup-react-native.sh
-./setup-react-native.sh
-
-
-
-chmod +x setup-mobile-structure.sh
-./setup-mobile-structure.sh
-
-## If You Have Issues, Run the Optional Fixes
-## Run these only if you face issues!
-
-chmod +x setup-xcode-ios.sh
-./setup-xcode-ios.sh
-
-
-##  If You Have Ruby or CocoaPods Issues
-## Fixes: Ruby installation, CocoaPods issues, and pod install errors.
-chmod +x setup-optional-fix-ruby-pods.sh
 ./setup-optional-fix-ruby-pods.sh
 
-##  If You Have Node.js or npm Issues
-##  Fixes: Node.js installation, npm version issues, and dependency errors.
-chmod +x setup-optional-fix-node-npm.sh
-./setup-optional-fix-node-npm.sh
+# 1.4 (Optional) Fix Xcode & iOS Issues (For macOS Users)
+# If Xcode is installed, but pod install or xcodebuild is failing, run:
+
+./setup-optional-xcode-ios.sh
+
+# 1.5 Install and Setup React Native
+# This installs all dependencies, CocoaPods (for iOS), and ensures Metro Bundler is ready.
+
+./setup-react-native.sh
+
 
 ```
+
 
 ## Project Running The App
 
 ```shell
 
-npx react-native start
-npx react-native run-android  # For Android
-npx react-native run-ios      # For iOS (Mac only)
+# Use this script every time you start working on the project.
+# 2.1 Start the React Native App
+
+./run-react-native-project.sh
+
+# This script:
+# Starts Metro Bundler
+# Runs Android (default) or iOS (on Mac)
+
+
+```
+
+##  Building the App for Release
+
+```shell
+
+## 3.1 Build Android APK
+npx react-native run-android --variant=release
+
 
 ```
