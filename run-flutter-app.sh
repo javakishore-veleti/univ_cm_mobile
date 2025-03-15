@@ -37,5 +37,3 @@ else
 fi
 
 echo "✅ Flutter app started successfully!"
-
-university_bg.jpg
