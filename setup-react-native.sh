@@ -4,6 +4,13 @@ PROJECT_NAME="univ_cm_mobile"
 
 echo "🚀 Starting React Native Setup for $PROJECT_NAME..."
 
+rm -rf node_modules package-lock.json
+npm cache clean --force
+npm install -g @react-native-community/cli
+npm install -g react-native
+npm install -g react-native-cli
+npm install
+
 # ✅ Step 1: Ensure Required Tools Are Installed
 if ! command -v node &> /dev/null; then
     echo "❌ Node.js is not installed. Please install Node.js first!"
