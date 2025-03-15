@@ -6,7 +6,18 @@ Cross-platform mobile app for university course management, student applications
 
 ```shell
 
-chmod +x setup-flutter-structure.sh
-./setup-flutter-structure.sh
+chmod +x setup-01-install-flutter.sh
+./setup-01-install-flutter.sh
+
+chmod +x setup-02-flutter-structure.sh
+./setup-02-flutter-structure.sh
+
+chmod +x setup-03-create-screens.sh
+./setup-03-create-screens.sh
+
+chmod +x run-flutter-app.sh
+./run-flutter-app.sh
+
+
 
 ```
